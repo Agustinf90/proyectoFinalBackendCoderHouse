@@ -8,7 +8,7 @@ import * as modelCarts from '../models/carts.js';
 
 
 let responseCarts3 = await modelCarts.carts.find({})
-let productosdb = await model.products.find({})
+// let productosdb = await model.products.find({})
 
 
 let carts = responseCarts3
@@ -77,8 +77,8 @@ export async function getCartById(req, res) {
 
     let cartActual = await modelCarts.carts.find({ id: cartId })
     let prodActual = await model.products.find({ id: productId })
+    
     let cartActual2 = carts.filter((item) => item.id === cartId);
-
     let prodInCart2 = cartActual2[0].products.find((item) => item.id === prodActual[0].id);
 
     if (prodInCart2) {

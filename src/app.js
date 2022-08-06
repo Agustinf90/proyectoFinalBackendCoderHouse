@@ -4,9 +4,13 @@ import apiRouter from './routes/apiRouter.js';
 import __dirname from './utils.js';
 import './persistence/mongo.js'
 import isAdmin from './middlewares/isAdmin.js';
+import {migrate} from './persistence/mongo.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+// load initial data base //
+// migrate();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
